@@ -18,10 +18,6 @@
         />
 
       </div>
-      <div  class="registr">
-        <registr/>
-      </div>
-
       </div>
       <div class="products">
         <item-list
@@ -45,7 +41,6 @@
 <script>
 import PageHeader from "./pageCompon/Header/header";
 import SFilter from "./pageCompon/FilterTab/Filter";
-import Registr from "./pageCompon/Registration/registForm";
 import ItemList from "./pageCompon/ItemList/itList";
 import {mapActions, mapGetters } from "vuex";
 
@@ -55,8 +50,7 @@ export default {
   components: {
     PageHeader,
     SFilter,
-    ItemList,
-    Registr
+    ItemList
   },
 
   data() {

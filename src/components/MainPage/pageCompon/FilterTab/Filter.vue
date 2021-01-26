@@ -60,15 +60,14 @@
 </template>
 
 <script>
-import { mapActions,mapGetters} from "vuex";
-
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "SFilter",
 
-computed: {
-...mapGetters("films",["getItems"])
-},
+  computed: {
+    ...mapGetters("films", ["getItems"]),
+  },
 
   props: {
     films: {
@@ -77,27 +76,25 @@ computed: {
     },
   },
 
-
   data() {
     return {
       numbers: [1994, 2020],
-    
     };
   },
-watch: {
-  numbers(newValue) {
-     this.$emit("year-filter", newValue);
+  watch: {
+    numbers(newValue) {
+      this.$emit("year-filter", newValue);
+    },
+  },
 
-  }
-},
   methods: {
- ...mapActions(["yearFilter"]),
+    ...mapActions(["yearFilter"]),
 
     getRandomItem() {
       const randNum = Math.floor(1 + Math.random() * 22);
-      let itemsArr=this.getItems
-      let randItem=itemsArr[randNum]
-      let randId=randItem._id
+      let itemsArr = this.getItems;
+      let randItem = itemsArr[randNum];
+      let randId = randItem._id;
       this.$router.push({
         name: "item_p",
         params: { item_id: randId },

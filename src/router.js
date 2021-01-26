@@ -34,7 +34,7 @@ router.beforeEach((to, from, next) => {
 
   if (check) {
     // Недопускаємо до захищених роутів, якщо немає токена
-    alert('Зареєструйтесь !');
+    alert('Спочатку зареєструйтесь! Потім залогіньтесь! [sign up =>and=> login]');
 
     next({ path: "/main" });
 

@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div class="img" v-if="staticSrc !== null">
-      <img class="myImg" :src="staticSrc" alt="productIMG" />
+        <img @click="goToItem" class="myImg" :src="staticSrc" alt="productIMG"
+      />
+      <!-- <img class="myImg" :src="staticSrc" alt="productIMG" /> -->
     </div>
     <div class="img" v-else>
       <img class="myImg" :src="myImg" alt="productIMG" />
@@ -72,8 +74,7 @@ export default {
 
         this.buttonDefault = "In list";
       } else {
-
-      this.deleteFromCart(this.id);
+        this.deleteFromCart(this.id);
         this.buttonDefault = "Add";
       }
     },
@@ -104,6 +105,7 @@ export default {
   height: 360px;
 }
 .myImg {
+  cursor: pointer;
   border-radius: 5px;
   width: 240px;
 }
